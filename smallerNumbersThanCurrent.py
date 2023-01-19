@@ -12,7 +12,6 @@ def smallerNumbersThanCurrent(nums):
         res.append(count)
     return res
   
-  
 def smallerNumbersThanCurrentOptimal(nums):
   """
   We sort the list (we don't want to keep traversing the list back and forth) and store in another temp list. 
@@ -24,16 +23,15 @@ def smallerNumbersThanCurrentOptimal(nums):
   Time: O(n*log(n)) #sorting
   Space: O(n) #dictionary
   """
-	temp = sorted(nums)
-	mapping = {}
-	result = []
-	for i in range(len(temp)):
-		if temp[i] not in mapping:
-			mapping[temp[i]] = i
-	for i in range(len(nums)):
-		result.append(mapping[nums[i]])
-	return result
+  temp = sorted(nums)
+  mapping = {}
+  result = []
+  for i in range(len(temp)):
+      if temp[i] not in mapping:
+          mapping[temp[i]] = i
+  for i in range(len(nums)):
+      result.append(mapping[nums[i]])
+  return result
   
- 
 print(smallerNumbersThanCurrent(nums = [8,1,2,2,3]))
 print(smallerNumbersThanCurrentOptimal(nums = [8,1,2,2,3]))
